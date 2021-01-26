@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Hello World</title>
+    <script src="../../dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="el">
+      <div v-for="person in people" :key="person.name">
+        <h1>{{ person.name }}</h1>
+        <span>{{ person.age }}</span>
+        <button @click="grow(person)">make me older</button>
+      </div>
+    </div>
+
+    <script>
+      debugger;
+      var vm = new Vue({
+        el: '#el',
+        data: {
+          people: [{
+            name: 'cj',
+            age: 24
+          }, {
+            name: 'cj2',
+            age: 25
+          }],
+        },
+        methods: {
+          grow(person) {
+            person.age = person.age + 1; 
+          },
+        },
+      })
+    </script>
+  </body>
+</html>
